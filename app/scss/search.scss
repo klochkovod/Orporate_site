@@ -1,0 +1,93 @@
+@import "mixins";
+@import "vars";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Gotham Pro', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;
+  background-color: #fff;
+  color: $mainColor2;
+
+  @media (max-width: 767px) {
+    font-size: 25px;
+  }
+}
+
+button:active, button:focus {
+  outline: none;
+}
+
+a:active, a:focus { outline: none; }
+
+input, textarea {outline:none;}
+input:active, textarea:active {outline:none;}
+:focus {outline:none;}
+textarea {resize:none;}
+textarea {resize:vertical;}
+textarea {resize:horizontal;}
+
+h1 {
+  font-size: 120px;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: normal;
+
+  @media (max-width: 767px) {
+    font-size: 35px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $mainColor;
+
+  &:hover {
+    color: $mainColor4;
+  }
+}
+
+//= template/modal.scss
+//= template/header.scss
+
+section.search-result {
+  background: $mainColor5;
+  padding-top: 50px;
+
+  h2 {
+    margin-bottom: 50px;
+  }
+
+
+  a {
+    display: block;
+    background-color: $white;
+    padding: 20px;
+    text-decoration: none;
+    color: $mainColor2;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    transition: box-shadow 200ms ease;
+
+    &:hover {
+      box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
+    }
+
+    &:last-child {
+      position: relative;
+      margin: 0;
+    }
+  }
+}
+
+//= template/footer.scss

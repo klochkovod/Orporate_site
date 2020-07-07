@@ -1,0 +1,84 @@
+.style-modal {
+  .modal-content {
+    border: 0;
+    border-radius: 0;
+    background-color: inherit;
+    .header-modal-feedback {
+      border-radius: 5px 5px 0 0;
+      color: $white;
+      padding: 20px 50px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(90deg, rgba(172,155,122,1) 0%, rgba(44,42,41,1) 100%);
+
+      span {
+        font-size: 35px;
+      }
+
+      button {
+        color: $mainColor;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        border: 0;
+        background-color: inherit;
+        width: 52px;
+        height: 52px;
+        line-height: 52px;
+        text-align: center;
+        transition: color 200ms ease;
+        font-size: 35px;
+
+        &:hover {
+          color: $mainColor4;
+        }
+      }
+    }
+
+    .body-modal-feedback {
+      padding: 40px 0;
+      background-color: $white;
+      border-radius: 0 0 5px 5px;
+
+       form {
+         position: relative;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         flex-direction: column;
+
+         input {
+           padding: 10px;
+           width: calc(100% - 160px);
+           margin-bottom: 20px;
+           border-radius: 5px;
+           border: 1px solid $mainColor2;
+           font-size: 25px;
+           text-align: center;
+
+           &:focus {
+             border-color: $mainColor;
+           }
+         }
+
+         button {
+           border: 0;
+           border-radius: 5px;
+           background-color: $mainColor;
+           color: $white;
+           font-size: 25px;
+           padding: 10px 0;
+           width: calc(100% - 160px);
+           text-align: center;
+           transition: background-color 200ms ease;
+
+           &:hover {
+             background-color: $mainColor4;
+           }
+         }
+       }
+    }
+  }
+}

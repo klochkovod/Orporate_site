@@ -1,0 +1,363 @@
+@import "mixins";
+@import "vars";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Gotham Pro', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;
+  background-color: #fff;
+  color: $mainColor2;
+
+  @media (max-width: 767px) {
+    font-size: 25px;
+  }
+}
+
+button:active, button:focus {
+  outline: none;
+}
+
+a:active, a:focus { outline: none; }
+
+input, textarea {outline:none;}
+input:active, textarea:active {outline:none;}
+:focus {outline:none;}
+textarea {resize:none;}
+textarea {resize:vertical;}
+textarea {resize:horizontal;}
+
+h1 {
+  font-size: 120px;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: normal;
+
+  @media (max-width: 767px) {
+    font-size: 35px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $mainColor;
+
+  &:hover {
+    color: $mainColor4;
+  }
+}
+
+//= template/modal.scss
+//= template/header.scss
+
+section.catalog {
+  background-color: $mainColor5;
+
+  .categories {
+    padding-top: 10px;
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        width: 100%;
+        margin-bottom: 10px;
+        list-style: none;
+
+        .active {
+          color: $mainColor;
+          background-color: $mainColor2;
+          transition: color 200ms ease;
+
+          &:hover {
+            color: $mainColor4;
+          }
+        }
+
+        a {
+          color: $mainColor2;
+          display: block;
+          text-decoration: none;
+          width: 100%;
+          height: 60px;
+          border-radius: 5px;
+          text-align: center;
+          line-height: 60px;
+          border: 1px solid $mainColor2;
+          transition: color 200ms ease, background-color 200ms ease;
+
+          &:hover {
+            color: $white;
+            background-color: $mainColor2;
+          }
+        }
+      }
+    }
+  }
+
+  .elements {
+
+    h2 {
+      margin: 0;
+      padding: 50px 0;
+    }
+
+    > .row > div {
+      padding-bottom: 30px;
+
+      @media (min-width: 992px) {
+        &:nth-last-child(2){
+          padding-bottom: 0px;
+        }
+
+        &:nth-last-child(3){
+          padding-bottom: 0px;
+        }
+      }
+
+      @media(min-width: 768px) and (max-width: 991px) {
+        &:nth-last-child(2){
+          padding-bottom: 0px;
+        }
+      }
+
+      &:last-child {
+        padding-bottom: 0px;
+      }
+    }
+
+    .descriptio {
+      margin-bottom: 30px;
+    }
+
+    .element {
+      display: block;
+      text-decoration: none;
+      color: $mainColor2;
+      background-color: $white;
+      border-radius: 5px;
+      overflow: hidden;
+      transition: box-shadow 200ms ease, background-color 200ms ease, color 200ms ease;
+
+      @media (hover) , (min-width:0\0) , (min--moz-device-pixel-ratio:0){
+        &:hover {
+          background-color: $mainColor2;
+          box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
+          color: $white;
+
+          .img-element .img-1 {
+            opacity: 0;
+          }
+
+          .img-element .img-2 {
+            opacity: 100;
+          }
+
+          .name-element {
+            p {
+              &:last-child {
+                background-color: $white;
+                color: $mainColor2;
+              }
+            }
+          }
+        }
+      }
+
+      .img-element {
+        padding: 30px 0;
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        .img-1 {
+          opacity: 100;
+        }
+
+        .img-2 {
+          position: absolute;
+          top: 30px;
+          opacity: 0;
+        }
+
+        img {
+          height: 190px;
+          transition: opacity 200ms ease;
+        }
+      }
+
+      .name-element {
+        display: flex;
+        height: 60px;
+
+        p {
+          width: 50%;
+          height: 60px;
+          text-align: center;
+          line-height: 60px;
+          margin: 0;
+
+          &:last-child {
+            color: $white;
+            background-color: $mainColor2;
+            border-radius: 5px 0 0 0;
+            transition: background-color 200ms ease, color 200ms ease;
+          }
+        }
+      }
+    }
+
+    .navigation-done {
+      padding-top: 30px;
+      display: flex;
+      justify-content: center;
+
+      ul {
+        padding: 0;
+        margin: 0;
+
+        li {
+          display: inline-block;
+          margin: 0 15px;
+          color: $black;
+          font-size: 25px;
+
+          .active {
+            font-weight: bold;
+            color: $mainColor;
+          }
+
+          a {
+            color: $mainColor2;
+            text-decoration: none;
+            transition: color 200ms ease;
+
+            &:hover {
+               color: $mainColor;
+            }
+          }
+
+          i {
+            color: $mainColor;
+            border: 1px solid $mainColor;
+            height: 40px;
+            width: 40px;
+            border-radius: 5px;
+            line-height: 40px;
+            text-align: center;
+            transition: color 200ms ease, background-color 200ms ease;
+
+            &:hover {
+              background-color: $mainColor;
+              color: $white;
+              cursor: pointer;
+            }
+          }
+
+          &:hover {
+            color: $mainColor;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+section.constructor {
+  background-color: $mainColor5;
+
+  h2 {
+    margin: 0;
+    padding: 50px 0;
+  }
+
+  .switch-constructor {
+    width: 100%;
+    margin-bottom: 30px;
+    border: 1px solid $mainColor2;
+    overflow: hidden;
+    border-radius: 5px;
+
+    p {
+      width: 100%;
+      height: 40px;
+      text-align: center;
+      margin: 0;
+      line-height: 40px;
+    }
+
+    .switch-block {
+      display: flex;
+      width: 100%;
+      height: 40px;
+      background-color: $white;
+      overflow: hidden;
+      position: relative;
+
+      .buttons-2 {
+        width: calc(100% / 2);
+      }
+
+      .buttons-3 {
+        width: calc(100% / 3);
+      }
+
+      .buttons-4 {
+        width: calc(100% / 4);
+      }
+
+      .buttons-5 {
+        width: calc(100% / 5);
+      }
+
+      .bg-button {
+        z-index: 1;
+        position: absolute;
+        background-color: $mainColor;
+        top: 0;
+        left: 0;
+        height: 40px;
+      }
+
+      .switch-button {
+        z-index: 2;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .img-constructor {
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+    width: 100%;
+
+    img {
+      display: none;
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+  }
+}
+
+//= template/footer.scss

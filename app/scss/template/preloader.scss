@@ -1,0 +1,44 @@
+#p_prldr{
+position: fixed;
+left: 0;
+top: 0;
+right:0;
+bottom:0;
+background: $mainColor5;
+z-index: 30;}
+
+.contpre small{font-size:25px;}
+
+.contpre {
+width: 250px;
+height: 100px;
+position: absolute;
+left: 50%;top: 48%;
+margin-left:-125px;
+margin-top:-75px;
+color: $mainColor;
+font-size:40px;
+letter-spacing:-2px;
+text-align:center;
+line-height:35px;}
+
+.line {
+    margin: 5px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    background-color: $mainColor;
+}
+
+.load-3 .line:nth-last-child(1) {animation: loadingC .9s .1s linear infinite;}
+.load-3 .line:nth-last-child(2) {animation: loadingC .9s .2s linear infinite;}
+.load-3 .line:nth-last-child(3) {animation: loadingC .9s .3s linear infinite;}
+.load-3 .line:nth-last-child(4) {animation: loadingC .9s .4s linear infinite;}
+.load-3 .line:nth-last-child(5) {animation: loadingC .9s .5s linear infinite;}
+
+@keyframes loadingC {
+    0 {transform: translate(0,0);}
+    50% {transform: translate(0,15px);}
+    100% {transform: translate(0,0);}
+}

@@ -1,0 +1,213 @@
+@import "mixins";
+@import "vars";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Gotham Pro', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;
+  background-color: #fff;
+  color: $mainColor2;
+
+  @media (max-width: 767px) {
+    font-size: 25px;
+  }
+}
+
+button:active, button:focus {
+  outline: none;
+}
+
+a:active, a:focus { outline: none; }
+
+input, textarea {outline:none;}
+input:active, textarea:active {outline:none;}
+:focus {outline:none;}
+textarea {resize:none;}
+textarea {resize:vertical;}
+textarea {resize:horizontal;}
+
+h1 {
+  font-size: 120px;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: normal;
+
+  @media (max-width: 767px) {
+    font-size: 35px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $mainColor;
+
+  &:hover {
+    color: $mainColor4;
+  }
+}
+
+//= template/modal.scss
+//= template/header.scss
+
+section.all-news {
+  background-color: $mainColor5;
+
+  h2 {
+    padding: 50px 0;
+    margin: 0;
+  }
+
+  .recent-news-block {
+    overflow: hidden;
+    margin-bottom: 30px;
+    background-color: $mainColor2;
+    height: 180px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    text-decoration: none;
+    color: $white;
+    border-radius: 5px;
+    transition: box-shadow 200ms ease;
+
+    &:hover {
+      box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
+    }
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+        height: 205px;
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        height: 155px;
+    }
+
+    @media (max-width: 767px) {
+        height: 540px;
+        flex-direction: column;
+    }
+
+    .img-news-mini {
+      position: relative;
+      width: 40%;
+      height: 180px;
+
+      @media (min-width: 992px) and (max-width: 1199px) {
+          height: 205px;
+      }
+
+      @media (min-width: 768px) and (max-width: 991px) {
+          height: 155px;
+      }
+
+      @media (max-width: 767px) {
+          width: 100%;
+          height: 300px;
+      }
+
+      .date-news-mini {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 135px;
+        height: 60px;
+        background-color: $mainColor;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 0 0 5px 0;
+
+        @media (min-width: 768px) and (max-width: 991){
+            width: 150px;
+            height: 80px;
+            line-height: 40px;
+        }
+
+        @media (max-width: 767px) {
+            width: 180px;
+            height: 80px;
+            line-height: 40px;
+        }
+      }
+    }
+
+    .text-news-mini {
+      width: 60%;
+      height: 100%;
+      padding: 10px;
+      color: $white;
+
+      @media (max-width: 767px) {
+          width: 100%;
+          height: 240px;
+      }
+
+      p {margin: 0}
+    }
+  }
+  .navigation-done {
+    display: flex;
+    justify-content: center;
+
+    ul {
+      padding: 0;
+      margin: 0;
+
+      li {
+        display: inline-block;
+        margin: 0 15px;
+        color: $black;
+        font-size: 25px;
+
+        .active {
+          font-weight: bold;
+          color: $mainColor;
+        }
+
+        a {
+          color: $mainColor2;
+          text-decoration: none;
+          transition: color 200ms ease;
+
+          &:hover {
+             color: $mainColor;
+          }
+        }
+
+        i {
+          color: $mainColor;
+          border: 1px solid $mainColor;
+          height: 40px;
+          width: 40px;
+          border-radius: 5px;
+          line-height: 40px;
+          text-align: center;
+          transition: color 200ms ease, background-color 200ms ease;
+
+          &:hover {
+            background-color: $mainColor;
+            color: $white;
+            cursor: pointer;
+          }
+        }
+
+        &:hover {
+          color: $mainColor;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+//= template/footer.scss

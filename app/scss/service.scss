@@ -1,0 +1,156 @@
+@import "mixins";
+@import "vars";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Gotham Pro', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;
+  background-color: #fff;
+  color: $mainColor2;
+
+  @media (max-width: 767px) {
+    font-size: 25px;
+  }
+}
+
+button:active, button:focus {
+  outline: none;
+}
+
+a:active, a:focus { outline: none; }
+
+input, textarea {outline:none;}
+input:active, textarea:active {outline:none;}
+:focus {outline:none;}
+textarea {resize:none;}
+textarea {resize:vertical;}
+textarea {resize:horizontal;}
+
+h1 {
+  font-size: 120px;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: normal;
+
+  @media (max-width: 767px) {
+    font-size: 35px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $mainColor;
+
+  &:hover {
+    color: $mainColor4;
+  }
+}
+
+//= template/modal.scss
+//= template/header.scss
+section.service-section {
+
+  h2 {
+    padding: 50px 0;
+    margin: 0;
+  }
+
+  .row-service {
+    margin-bottom: 50px;
+  }
+
+  div.no-flex {
+    justify-content: flex-start;
+  }
+
+  .text-service-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+
+    @media (min-width: 992px) {
+      padding: 0 5%;
+
+      & :last-child {
+        margin-bottom: 0px;
+      }
+    }
+
+    .end-text-service {
+      margin-bottom: 20px;
+    }
+
+    .end-text-service2 {
+      margin-bottom: 0px;
+    }
+
+    .h-text-service {
+      font-weight: bold;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 30px;
+      margin-bottom: 20px;
+
+      li {
+        position: relative;
+        padding: 5px 0;
+
+        &:before {
+          position: absolute;
+          content: "";
+          width: 20px;
+          height: 2px;
+          background-color: $mainColor;
+          left: -30px;
+          top: 18px;
+
+          @media (max-width: 767px) {
+            top: 19px;
+          }
+        }
+      }
+    }
+  }
+
+  .img-service-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .end-img-service {
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 0px;
+    }
+
+    .h-text-service {
+      font-weight: bold;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+//= template/footer.scss

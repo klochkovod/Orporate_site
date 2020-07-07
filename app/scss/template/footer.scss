@@ -1,0 +1,506 @@
+section.news {
+  background-color: $mainColor5;
+  padding: 50px 0;
+
+  h2 {
+    margin-bottom: 50px;
+  }
+
+  .news-block {
+    display: flex;
+    justify-content: space-between;
+    height: 560px;
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+        height: 630px;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        height: auto;
+        flex-direction: column;
+    }
+    @media (max-width: 767px) {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .latest-news {
+      height: 100%;
+      width: 50%;
+      overflow: hidden;
+      display: flex;
+      text-decoration: none;
+      color: $white;
+      justify-content: flex-start;
+      flex-direction: column;
+      border-radius: 5px;
+      transition: box-shadow 200ms ease;
+
+      &:hover {
+        color: $white;
+        box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
+      }
+
+      @media (min-width: 768px) and (max-width: 991px) {
+        width: 100%;
+        height: 450px;
+        margin-bottom: 30px;
+      }
+
+      @media (max-width: 767px) {
+          position: relative;
+          width: 100%;
+          height: 700px;
+          margin-bottom: 30px;
+      }
+
+      .img-latest-news {
+        width: 100%;
+        height: calc(100% - 155px);
+
+        @media (min-width: 992px) and (max-width: 1199px) {
+            height: calc(100% - 180px);
+        }
+        @media (min-width: 768px) and (max-width: 991px) {
+            height: calc(100% - 100px);
+        }
+        @media (max-width: 767px) {
+            height: calc(100% - 245px);
+        }
+      }
+
+      .latest-news-bottom {
+        display: flex;
+        justify-content: space-between;
+
+        .date-news {
+          width: 150px;
+          height: 155px;
+          background-color: $mainColor;
+          line-height: 40.5px;
+          text-align: center;
+          padding: 37px 0;
+
+          @media (min-width: 992px) and (max-width: 1199px) {
+              height: 180px;
+              padding: 40px 0;
+              line-height: 50px;
+          }
+          @media (min-width: 768px) and (max-width: 991px) {
+              height: 100px;
+              padding: 25px 0;
+              line-height: 25px;
+          }
+          @media (max-width: 767px) {
+              height: 80px;
+              padding: 0;
+              line-height: 40px;
+              width: 180px;
+              position: absolute;
+              top: 0;
+              left: 0;
+          }
+        }
+
+        .text-news {
+          width: calc(100% - 150px);
+          height: 155px;
+          background-color: $mainColor2;
+          padding: 10px;
+          color: $white;
+
+          p {
+            margin: 0;
+          }
+
+          @media (min-width: 992px) and (max-width: 1199px) {
+              height: 180px;
+          }
+
+          @media (min-width: 768px) and (max-width: 991px) {
+              height: 100px;
+          }
+
+          @media (max-width: 767px) {
+              height: 245px;
+              width: 100%;
+          }
+        }
+      }
+    }
+
+    .recent-news {
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-direction: column;
+
+      @media (min-width: 768px) and (max-width: 991px) {
+          width: 100%;
+          height: auto;
+      }
+
+      @media (max-width: 767px) {
+          width: 100%;
+          height: auto;
+      }
+
+      .recent-news-block {
+        overflow: hidden;
+        background-color: $mainColor2;
+        height: 180px;
+        width: 98%;
+        display: flex;
+        justify-content: flex-start;
+        text-decoration: none;
+        color: $white;
+        border-radius: 5px;
+        transition: box-shadow 200ms ease;
+
+        &:hover {
+          color: $white;
+          box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
+        }
+
+        @media (min-width: 992px) and (max-width: 1199px) {
+            height: 205px;
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            height: 155px;
+            width: 100%;
+            margin-bottom: 30px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 767px) {
+            width: 100%;
+            height: 540px;
+            flex-direction: column;
+            margin-bottom: 30px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+        }
+
+        .img-news-mini {
+          position: relative;
+          width: 40%;
+          height: 180px;
+
+          @media (min-width: 992px) and (max-width: 1199px) {
+              height: 205px;
+          }
+
+          @media (min-width: 768px) and (max-width: 991px) {
+              height: 155px;
+          }
+
+          @media (max-width: 767px) {
+              width: 100%;
+              height: 300px;
+          }
+
+          .date-news-mini {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 135px;
+            height: 60px;
+            background-color: $mainColor;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 0 0 5px 0;
+
+            @media (min-width: 768px) and (max-width: 991){
+                width: 150px;
+                height: 80px;
+                line-height: 40px;
+            }
+
+            @media (max-width: 767px) {
+                width: 180px;
+                height: 80px;
+                line-height: 40px;
+            }
+          }
+        }
+
+        .text-news-mini {
+          width: 60%;
+          height: 100%;
+          padding: 10px;
+          color: $white;
+
+          @media (max-width: 767px) {
+              width: 100%;
+              height: 240px;
+          }
+
+          p {margin: 0}
+        }
+      }
+    }
+  }
+  .a-news {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+
+    a {
+      text-decoration: none;
+      transition: color 200ms ease;
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  background-color: $mainColor2;
+
+  .footer-left {
+    display: flex;
+    justify-content: flex-start;
+
+    @media (max-width: 991px) {
+        justify-content: center;
+    }
+  }
+
+  .footer-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-right {
+    display: flex;
+    justify-content: flex-end;
+
+    @media (max-width: 991px) {
+        justify-content: center;
+    }
+  }
+
+  .nav-footer {
+    width: 100%;
+    padding-bottom: 50px;
+
+    p {
+      padding: 50px 0 20px 0;
+      margin: 0;
+      color: $mainColor;
+      font-weight: bold;
+
+      @media (max-width: 767px) {
+          text-align: center;
+      }
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      li {
+        margin-bottom: 10px;
+
+        @media (max-width: 767px) {
+            text-align: center;
+        }
+
+        a {
+          position: relative;
+          color: $white;
+          text-decoration: none;
+          transition: color 200ms ease;
+
+          &:before {
+            pointer-events: none;
+            position: absolute;
+            content: "";
+            width: 0px;
+            height: 2px;
+            background-color: $mainColor;
+            bottom: -6px;
+            transition: all 200ms ease;
+          }
+
+          &:hover {
+            color: $mainColor;
+
+            &:before {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .contacts-footer {
+    width: 100%;
+    padding-bottom: 50px;
+
+
+    p {
+      padding: 50px 0 20px 0;
+      margin: 0;
+      color: $mainColor;
+      font-weight: bold;
+
+      @media (max-width: 767px) {
+          padding-top: 0;
+          text-align: center;
+      }
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      li {
+        margin-bottom: 10px;
+        color: $white;
+
+        @media (max-width: 767px) {
+            text-align: center;
+        }
+
+        a {
+          text-decoration: none;
+          color: $white;
+          transition: color 200ms ease;
+
+          &:hover {
+            color: $mainColor;
+          }
+        }
+
+        span {
+          font-weight: bold;
+          color: $mainColor;
+        }
+      }
+    }
+  }
+
+  .social-footer {
+    padding: 50px 0;
+    width: 80%;
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        width: 40%;
+    }
+
+    @media (max-width: 991px) {
+        padding-top: 0;
+    }
+
+    @media (max-width: 767px) {
+        width: 70%;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .social-i {
+      > div {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+
+        i {
+          border: 1px solid $mainColor;
+          background-color: $mainColor;
+          border-radius: 5px;
+          height: 50px;
+          width: 50px;
+          line-height: 50px;
+          text-align: center;
+          font-size: 30px;
+          color: $white;
+          transition: all 200ms ease;
+
+          @media (max-width: 767px) {
+            height: 70px;
+            width: 70px;
+            font-size: 40px;
+            line-height: 70px;
+          }
+
+          &:hover {
+            cursor: pointer;
+            border-color: $mainColor2;
+            background-color: $mainColor2;
+            font-size: 40px;
+            color: $mainColor;
+
+            @media (max-width: 767px) {
+              font-size: 50px;
+            }
+          }
+        }
+      }
+
+      > div:last-child {
+        padding-top: 0px;
+      }
+    }
+
+    .top-button {
+      width: 60%;
+      margin: 0 20% 20px 20%;
+
+      i {
+        font-size: 30px;
+      }
+    }
+
+    button {
+      width: 100%;
+      border: 1px solid $mainColor;
+      border-radius: 5px;
+      padding: 10px 0px;
+      background: transparent;
+      text-align: center;
+      color: $white;
+      transition: background-color 200ms ease, border-color 200ms ease;
+
+      &:active {
+        background-color: $mainColor;
+        border-color: $mainColor;
+      }
+
+      @media (hover) , (min-width:0\0) , (min--moz-device-pixel-ratio:0){
+        &:hover {
+          background-color: $mainColor;
+          border-color: $mainColor;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    background: $mainColor;
+
+    > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+
+      @media (max-width: 767px) {
+        padding: 20px;
+      }
+
+      span {
+        text-align: center;
+      }
+    }
+  }
+}

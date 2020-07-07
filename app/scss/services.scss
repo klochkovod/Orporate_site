@@ -1,0 +1,141 @@
+@import "mixins";
+@import "vars";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Gotham Pro', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;
+  background-color: #fff;
+  color: $mainColor2;
+
+  @media (max-width: 767px) {
+    font-size: 25px;
+  }
+}
+
+button:active, button:focus {
+  outline: none;
+}
+
+a:active, a:focus { outline: none; }
+
+input, textarea {outline:none;}
+input:active, textarea:active {outline:none;}
+:focus {outline:none;}
+textarea {resize:none;}
+textarea {resize:vertical;}
+textarea {resize:horizontal;}
+
+h1 {
+  font-size: 120px;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: normal;
+
+  @media (max-width: 767px) {
+    font-size: 35px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $mainColor;
+
+  &:hover {
+    color: $mainColor4;
+  }
+}
+
+//= template/modal.scss
+//= template/header.scss
+
+section.services {
+  background-color: $mainColor5;
+
+  h2 {
+    padding: 50px 0;
+    margin: 0;
+  }
+
+  .row > div {
+    padding-bottom: 30px;
+
+    @media (min-width: 768px) {
+      &:nth-last-child(2){
+        padding-bottom: 0px;
+      }
+    }
+
+    &:last-child {
+      padding-bottom: 0px;
+    }
+  }
+
+  .row > div > div {
+    background-color: $white;
+    border-radius: 5px;
+    transition: box-shadow 200ms ease;
+
+    @media (hover) , (min-width:0\0) , (min--moz-device-pixel-ratio:0){
+      &:hover {
+        box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
+      }
+    }
+
+    .service-text {
+      padding: 20px;
+
+      @media (min-width: 1200px) {
+        height: 121px;
+      }
+
+      @media (min-width: 992px) and (max-width: 1199px) {
+        height: 148px;
+      }
+
+      @media (min-width: 768px) and (max-width: 991px) {
+        height: 121px;
+      }
+
+      @media (max-width: 767px) {
+        height: 151px;
+      }
+
+      p {
+        font-weight: bold;
+        margin: 0;
+      }
+    }
+
+    .service-img {
+      height: 200px;
+
+      @media (max-width: 767px) {
+        height: 300px;
+      }
+    }
+
+    .service-button {
+      padding: 20px;
+      text-align: center;
+
+      a {
+        text-decoration: none;
+        transition: color 200ms ease;
+      }
+    }
+  }
+}
+
+//= template/footer.scss

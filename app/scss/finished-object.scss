@@ -1,0 +1,279 @@
+@import "mixins";
+@import "vars";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Gotham Pro', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;
+  background-color: #fff;
+  color: $mainColor2;
+
+  @media (max-width: 767px) {
+    font-size: 25px;
+  }
+}
+
+button:active, button:focus {
+  outline: none;
+}
+
+a:active, a:focus { outline: none; }
+
+input, textarea {outline:none;}
+input:active, textarea:active {outline:none;}
+:focus {outline:none;}
+textarea {resize:none;}
+textarea {resize:vertical;}
+textarea {resize:horizontal;}
+
+h1 {
+  font-size: 120px;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: normal;
+
+  @media (max-width: 767px) {
+    font-size: 35px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $mainColor;
+
+  &:hover {
+    color: $mainColor4;
+  }
+}
+
+//= template/modal.scss
+//= template/header.scss
+
+section.finished-object {
+  background: $mainColor5;
+  padding-top: 50px;
+
+  h2 {
+    margin-bottom: 50px;
+  }
+
+  .finished-object {
+    overflow: hidden;
+    background: $white;
+    margin-bottom: 30px;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 5px;
+    transition: box-shadow 200ms ease;
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+        height: 270px;
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        height: 300px;
+    }
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      height: auto;
+    }
+
+    @media (hover) , (min-width:0\0) , (min--moz-device-pixel-ratio:0){
+      &:hover {
+        box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
+      }
+    }
+
+    .img-object {
+      width: 30%;
+      height: 200px;
+
+      @media (min-width: 992px) and (max-width: 1199px) {
+          height: 270px;
+      }
+
+      @media (min-width: 768px) and (max-width: 991px) {
+          height: 300px;
+          width: 35%;
+      }
+
+      @media (max-width: 767px) {
+        width: 100%;
+        height: 320px;
+      }
+    }
+
+    .finished-object-container {
+      width: 70%;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: 992px) and (max-width: 1199px) {
+          height: 270px;
+      }
+
+      @media (min-width: 768px) and (max-width: 991px) {
+          width: 65%;
+          height: 300px;
+      }
+
+      @media (max-width: 767px) {
+        width: 100%;
+        height: auto;
+      }
+
+      .finished-object-block {
+        @media (min-width: 768px) {
+          height: 70%;
+        }
+
+        @media (max-width: 767px) {
+          height: auto;
+        }
+      }
+
+      .finished-object-block2 {
+        @media (min-width: 768px) {
+          height: 30%;
+        }
+
+        @media (max-width: 767px) {
+          height: auto;
+        }
+      }
+
+      .finished-object-block, .finished-object-block2 {
+        width: 100%;
+
+        .text-finished-object {
+          padding: 30px;
+
+
+          @media (min-width: 768px) {
+            height: 100%;
+          }
+
+          @media (max-width: 767px) {
+            height: auto;
+          }
+
+          .name-object {
+            font-weight: bold;
+          }
+
+          p {
+            color: $mainColor3;
+            margin: 0;
+          }
+        }
+
+        .text-finished-object2 {
+          padding: 0 30px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          @media (min-width: 768px) {
+            height: calc(100% - 1px);
+          }
+
+          @media (max-width: 767px) {
+            height: 150px;
+          }
+
+          .object-town {
+            @media (max-width: 991px) {
+                width: 240px;
+            }
+          }
+
+          .object-map {
+            color: $mainColor;
+            transition: color 200ms ease;
+
+            &:hover {
+              color: $mainColor4;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .line-finished-object {
+          height: 1px;
+          background-color: rgba(106,108,108,0.2);
+        }
+      }
+    }
+  }
+
+  .navigation-done {
+    display: flex;
+    justify-content: center;
+
+    ul {
+      padding: 0;
+      margin: 0;
+
+      li {
+        display: inline-block;
+        margin: 0 15px;
+        color: $black;
+        font-size: 25px;
+
+        .active {
+          font-weight: bold;
+          color: $mainColor;
+        }
+
+        a {
+          color: $mainColor2;
+          text-decoration: none;
+          transition: color 200ms ease;
+
+          &:hover {
+             color: $mainColor;
+          }
+        }
+
+        i {
+          color: $mainColor;
+          border: 1px solid $mainColor;
+          height: 40px;
+          width: 40px;
+          border-radius: 5px;
+          line-height: 40px;
+          text-align: center;
+          transition: color 200ms ease, background-color 200ms ease;
+
+          &:hover {
+            background-color: $mainColor;
+            color: $white;
+            cursor: pointer;
+          }
+        }
+
+        &:hover {
+          color: $mainColor;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+//= template/footer.scss

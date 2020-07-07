@@ -1,0 +1,182 @@
+@import "mixins";
+@import "vars";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Gotham Pro', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;
+  background-color: #fff;
+  color: $mainColor2;
+
+  @media (max-width: 767px) {
+    font-size: 25px;
+  }
+}
+
+button:active, button:focus {
+  outline: none;
+}
+
+a:active, a:focus { outline: none; }
+
+input, textarea {outline:none;}
+input:active, textarea:active {outline:none;}
+:focus {outline:none;}
+textarea {resize:none;}
+textarea {resize:vertical;}
+textarea {resize:horizontal;}
+
+h1 {
+  font-size: 120px;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: normal;
+
+  @media (max-width: 767px) {
+    font-size: 35px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $mainColor;
+
+  &:hover {
+    color: $mainColor4;
+  }
+}
+
+//= template/modal.scss
+//= template/header.scss
+
+section.all-gallery {
+  background-color: $mainColor5;
+
+  h2 {
+    padding: 50px 0;
+    margin: 0;
+  }
+
+  > div > div > div {
+
+    padding-bottom: 30px;
+
+    @media (min-width: 768px) {
+      &:nth-last-child(2){
+        padding-bottom: 0px;
+      }
+    }
+
+    &:last-child {
+      padding-bottom: 0px;
+    }
+  }
+
+  .photo-category {
+    display: block;
+    text-decoration: none;
+    color: $mainColor2;
+    background-color: $white;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 200ms ease;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
+    }
+
+    .bg-img-category {
+      width: 100%;
+      height: 200px;
+    }
+
+    .text-photo-category {
+      width: 100%;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+
+      p {
+        margin: 0;
+      }
+    }
+
+  }
+
+  .video-block {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    width: 100%;
+    background-color: $white;
+    border-radius: 5px;
+    color: $mainColor2;
+    transition: box-shadow 200ms ease;
+
+    @media (hover) , (min-width:0\0) , (min--moz-device-pixel-ratio:0){
+      &:hover {
+        cursor: pointer;
+        color: $mainColor2;
+        box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
+      }
+    }
+
+    @media (min-width: 1200px) {
+      height: 100px;
+    }
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+      height: 150px;
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+      height: 100px;
+    }
+
+    @media (max-width: 767px) {
+      height: 200px;
+    }
+
+    .left-video-block, .right-video-block {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .left-video-block {
+      width: 150px;
+
+      i {
+        color: $mainColor;
+        font-size: 80px;
+      }
+    }
+
+    .right-video-block {
+      width: calc(100% - 150px);
+
+      p {
+        width: 90%;
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+//= template/footer.scss
